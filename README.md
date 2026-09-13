@@ -1,2 +1,6 @@
-# pontinho-familia
-Jogos da família: Pontinho e Caos Familiar
+# Pontinho da Família
+
+Jogos no navegador para tios, primos e todo mundo.
+
+- [Pontinho](pontinho.html)
+- [Caos Familiar](caos-familiar.html)

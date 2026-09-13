@@ -1,0 +1,10 @@
+{
+  "name": "Pontinho da Família",
+  "short_name": "Pontinho",
+  "start_url": "./pontinho.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d3b2e",
+  "theme_color": "#0d3b2e",
+  "icons": [{"src": "./icon-pontinho.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "any maskable"}]
+}
