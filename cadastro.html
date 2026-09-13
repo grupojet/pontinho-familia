@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cadastro — Jogos da Família</title>
+<style>
+:root{--bg:#0d3b2e;--gold:#e6c36a;--cream:#f4efe4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100dvh;background:radial-gradient(700px 400px at 50% 0,#165744,#0d3b2e);color:var(--cream);font-family:system-ui,sans-serif;padding:20px}
+.box{max-width:420px;margin:24px auto;background:#12382e;border:1px solid #2a5a4a;border-radius:20px;padding:22px}
+h1{font-size:26px;margin-bottom:6px}
+p{color:#b7d4c8;font-size:14px;margin-bottom:16px;line-height:1.4}
+label{display:block;font-size:12px;font-weight:800;margin:10px 0 4px}
+input{width:100%;padding:12px;border-radius:12px;border:1px solid #2f5f4e;background:#0b241c;color:#fff;font:inherit}
+.btn{width:100%;margin-top:12px;border:0;border-radius:14px;padding:13px;font-weight:800;cursor:pointer}
+.g{background:var(--gold);color:#2a1d00}
+.ghost{background:transparent;color:#fff;border:1.5px solid #3d6d5c}
+.msg{min-height:18px;color:var(--gold);font-size:13px;font-weight:700;margin-top:8px}
+.list{margin-top:16px}
+.card{background:#0b241c;border-radius:12px;padding:10px 12px;margin-top:8px;display:flex;justify-content:space-between;align-items:center}
+a{color:var(--gold)}
+.note{font-size:12px;color:#8fb3a6;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Cadastro da família</h1>
+  <p>Crie seu apelido neste celular. Sem PIX, sem depósito — o jogo é grátis.</p>
+  <label>Nome / apelido</label>
+  <input id="nome" maxlength="24" placeholder="Ex.: Tio Zé"/>
+  <label>Senha deste aparelho</label>
+  <input id="senha" type="password" maxlength="32" placeholder="Só para trocar de pessoa neste celular"/>
+  <div class="msg" id="msg"></div>
+  <button class="btn g" id="salvar">Cadastrar / entrar</button>
+  <button class="btn ghost" id="sair" style="display:none">Sair</button>
+  <div class="list" id="lista"></div>
+  <p class="note">Quem estiver logado escolhe o jogo:<br>
+    <a href="./pontinho.html">Pontinho</a> ·
+    <a href="./caos-familiar.html">Caos Familiar</a>
+  </p>
+</div>
+<script>
+const KEY="familia_users_v1";
+const SES="familia_session_v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+function save(a){localStorage.setItem(KEY,JSON.stringify(a))}
+function hash(s){let h=0;for(let i=0;i<s.length;i++) h=((h<<5)-h)+s.charCodeAt(i)|0; return String(h)}
+function render(){
+  const users=load();
+  const ses=sessionStorage.getItem(SES);
+  $("lista").innerHTML=users.map(u=>`<div class="card"><span>${u.nome}${ses===u.nome?" · agora":""}</span></div>`).join("")||"<p>Ninguém cadastrado ainda neste celular.</p>";
+  $("sair").style.display=ses?"block":"none";
+  if(ses) $("msg").textContent="Olá, "+ses+"!";
+}
+function $(id){return document.getElementById(id)}
+$("salvar").onclick=()=>{
+  const nome=$("nome").value.trim();
+  const senha=$("senha").value;
+  if(nome.length<2){$("msg").textContent="Escreva um nome.";return}
+  if(senha.length<4){$("msg").textContent="Senha com pelo menos 4 caracteres.";return}
+  const users=load();
+  const found=users.find(u=>u.nome.toLowerCase()===nome.toLowerCase());
+  if(found){
+    if(found.p!==hash(senha)){$("msg").textContent="Senha não confere.";return}
+    sessionStorage.setItem(SES,found.nome);
+    $("msg").textContent="Entrou como "+found.nome;
+  } else {
+    users.push({nome,p:hash(senha)});
+    save(users);
+    sessionStorage.setItem(SES,nome);
+    $("msg").textContent="Cadastrado: "+nome;
+  }
+  $("senha").value="";
+  render();
+};
+$("sair").onclick=()=>{sessionStorage.removeItem(SES);$("msg").textContent="Saiu.";render()};
+render();
+</script>
+</body>
+</html>
