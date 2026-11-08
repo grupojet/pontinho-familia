@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <style>
+    .s{stroke:#111;stroke-width:2;fill:none}
+    .f{fill:#e8e8e8;stroke:#111;stroke-width:2}
+    .r{fill:#d9442b;stroke:#111;stroke-width:2}
+    .c{stroke:#1b5fb8;stroke-width:1.2;stroke-dasharray:10 4 2 4;fill:none}
+    .dim{stroke:#1b5fb8;stroke-width:1;fill:none}
+    .dt{fill:#1b5fb8;font-size:12px}
+    .h{fill:#333;font-size:12px}
+    .T{fill:#111;font-weight:bold}
+  </style>
+  <rect width="1100" height="700" fill="#fff"/>
+  <text x="20" y="30" font-size="18" class="T">Layout mecânico — Roçadeira 1,5 m convertida para braço de escavadeira (Opção A)</text>
+
+  <!-- ====== VISTA SUPERIOR ====== -->
+  <text x="40" y="70" class="T">VISTA SUPERIOR</text>
+  <!-- deck -->
+  <rect x="60" y="100" width="420" height="320" rx="20" class="r"/>
+  <!-- chapa de reforço -->
+  <rect x="150" y="150" width="240" height="220" fill="#f3b5a8" stroke="#111" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="155" y="165" class="h">Chapa de reforço 9,5 mm</text>
+  <!-- rotor -->
+  <circle cx="270" cy="260" r="150" class="c"/>
+  <circle cx="270" cy="260" r="60" class="f"/>
+  <line x1="270" y1="200" x2="270" y2="320" class="s"/>
+  <line x1="210" y1="260" x2="330" y2="260" class="s"/>
+  <!-- motor -->
+  <circle cx="270" cy="260" r="34" fill="#9aa6b2" stroke="#111" stroke-width="2"/>
+  <text x="248" y="265" class="h">MOTOR</text>
+  <!-- cabeçote -->
+  <rect x="230" y="150" width="80" height="220" fill="none" stroke="#111" stroke-width="2.5"/>
+  <rect x="215" y="200" width="110" height="20" class="f"/>
+  <rect x="215" y="300" width="110" height="20" class="f"/>
+  <text x="330" y="215" class="h">Orelha pino articulação</text>
+  <text x="330" y="315" class="h">Orelha pino biela</text>
+  <!-- bloco -->
+  <rect x="380" y="120" width="70" height="40" class="f"/>
+  <text x="383" y="145" class="h">Bloco freio</text>
+  <!-- cortinas -->
+  <g stroke="#111" stroke-width="2">
+    <line x1="70" y1="100" x2="70" y2="420"/><line x1="470" y1="100" x2="470" y2="420"/>
+  </g>
+  <text x="75" y="440" class="h">Cortinas de corrente nas 4 faces (elos Ø8, passo 50 mm)</text>
+  <!-- dim -->
+  <line x1="60" y1="470" x2="480" y2="470" class="dim"/>
+  <line x1="60" y1="462" x2="60" y2="478" class="dim"/><line x1="480" y1="462" x2="480" y2="478" class="dim"/>
+  <text x="225" y="488" class="dt">≈1 600 mm (deck) — varredura Ø1 500</text>
+
+  <!-- ====== VISTA LATERAL ====== -->
+  <text x="560" y="70" class="T">VISTA LATERAL (corte pelo eixo)</text>
+  <!-- solo -->
+  <line x1="540" y1="600" x2="1080" y2="600" stroke="#6b4f2a" stroke-width="3"/>
+  <text x="545" y="618" class="h">solo</text>
+  <!-- patins -->
+  <rect x="580" y="560" width="440" height="40" class="f"/>
+  <text x="585" y="585" class="h">Patins 12,7 mm (novos), altura de corte 60–120 mm</text>
+  <!-- deck lateral -->
+  <rect x="580" y="430" width="440" height="130" class="r"/>
+  <!-- reforço topo -->
+  <rect x="650" y="420" width="300" height="12" fill="#f3b5a8" stroke="#111"/>
+  <!-- facas -->
+  <rect x="640" y="520" width="320" height="10" class="f"/>
+  <circle cx="800" cy="525" r="6" fill="#111"/>
+  <text x="965" y="530" class="h">Disco + facas (orig.)</text>
+  <!-- mancal -->
+  <rect x="765" y="330" width="70" height="190" fill="#bfc6cc" stroke="#111" stroke-width="2"/>
+  <text x="840" y="420" class="h">Mancal: tubo Ø130 x 15,</text>
+  <text x="840" y="436" class="h">2x rolamentos 32212,</text>
+  <text x="840" y="452" class="h">retentores, graxeira</text>
+  <!-- eixo -->
+  <rect x="790" y="300" width="20" height="230" fill="#555" stroke="#111"/>
+  <text x="840" y="490" class="h">Eixo Ø60 SAE 1045</text>
+  <!-- acoplamento -->
+  <rect x="780" y="300" width="40" height="28" fill="#777" stroke="#111"/>
+  <text x="840" y="318" class="h">Luva estriada / acoplamento</text>
+  <!-- adaptador -->
+  <rect x="740" y="285" width="120" height="14" fill="#9aa6b2" stroke="#111"/>
+  <!-- motor -->
+  <rect x="760" y="190" width="80" height="95" fill="#9aa6b2" stroke="#111" stroke-width="2"/>
+  <text x="768" y="240" class="h">A2FM 125</text>
+  <text x="850" y="262" class="h">Motor de pistões, flange SAE</text>
+  <text x="850" y="278" class="h">Portas A/B 1" SAE 6000, dreno</text>
+  <!-- cabeçote -->
+  <polygon points="620,430 620,250 700,150 900,150 980,250 980,430" fill="none" stroke="#111" stroke-width="3"/>
+  <circle cx="700" cy="200" r="14" class="f"/>
+  <circle cx="900" cy="200" r="14" class="f"/>
+  <text x="600" y="120" class="h">Cabeçote pino-a-pino (chapas 40 mm, LNE 500 / Hardox 450)</text>
+  <!-- braço -->
+  <line x1="700" y1="200" x2="600" y2="40" stroke="#888" stroke-width="18" stroke-linecap="round" opacity=".5"/>
+  <line x1="900" y1="200" x2="1000" y2="90" stroke="#888" stroke-width="10" stroke-linecap="round" opacity=".5"/>
+  <text x="560" y="40" class="h">lança / braço</text>
+  <text x="1000" y="80" class="h">biela</text>
+  <!-- dims -->
+  <line x1="700" y1="178" x2="900" y2="178" class="dim"/>
+  <text x="720" y="172" class="dt">E — entre-eixos dos pinos (medir caçamba)</text>
+  <line x1="1050" y1="150" x2="1050" y2="600" class="dim"/>
+  <line x1="1042" y1="150" x2="1058" y2="150" class="dim"/><line x1="1042" y1="600" x2="1058" y2="600" class="dim"/>
+  <text x="1058" y="380" class="dt" transform="rotate(90 1058 380)">≈1 000 mm</text>
+
+  <text x="20" y="670" class="h">Notas: 1) Caixa cônica, cardan e cabeçalho de 3 pontos removidos. 2) Cabeçote centrado no eixo do rotor para CG alinhado com os pinos.</text>
+  <text x="20" y="688" class="h">3) Motor nunca suporta cargas radiais do rotor: eixo apoiado em mancal próprio. 4) Dimensões de referência, confirmar na medição.</text>
+</svg>

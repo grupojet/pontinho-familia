@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <style>
+    .l{stroke:#111;stroke-width:2.2;fill:none}
+    .d{stroke:#111;stroke-width:1.6;fill:none;stroke-dasharray:7 5}
+    .t{fill:#111}
+    .b{fill:#fff;stroke:#111;stroke-width:2}
+    .h{fill:#555;font-size:11px}
+  </style>
+  <rect width="1000" height="640" fill="#fff"/>
+  <text x="20" y="30" font-size="18" font-weight="bold" class="t">Esquema hidráulico — Roçadeira acionada pelo circuito auxiliar X1 (modo martelo)</text>
+  <text x="20" y="50" class="h">Fluxo unidirecional. Pressão/vazão ajustadas no IECU da escavadeira. Bloco de freio/anticavitação obrigatório junto ao motor.</text>
+
+  <!-- Escavadeira (limite) -->
+  <rect x="30" y="80" width="300" height="520" class="d"/>
+  <text x="40" y="100" font-weight="bold" class="t">ESCAVADEIRA VOLVO</text>
+
+  <!-- Bomba -->
+  <circle cx="110" cy="420" r="28" class="b"/>
+  <polygon points="110,392 120,410 100,410" fill="#111"/>
+  <line x1="110" y1="448" x2="110" y2="520" class="l"/>
+  <text x="80" y="470" class="h">Bomba principal P1</text>
+  <!-- Tanque -->
+  <path d="M90 520 h40 M95 528 h30 M100 536 h20" class="l"/>
+  <text x="140" y="530" class="h">Reservatório</text>
+
+  <!-- Válvula X1 (martelo) -->
+  <rect x="160" y="300" width="60" height="60" class="b"/>
+  <rect x="220" y="300" width="60" height="60" class="b"/>
+  <line x1="170" y1="350" x2="210" y2="310" class="l"/>
+  <polygon points="205,312 212,308 210,318" fill="#111"/>
+  <line x1="230" y1="310" x2="230" y2="350" class="l"/>
+  <line x1="270" y1="310" x2="270" y2="350" class="l"/>
+  <text x="150" y="290" class="h">Seção X1 "martelo" (1 via + retorno)</text>
+  <line x1="110" y1="392" x2="110" y2="200" class="l"/>
+  <line x1="110" y1="200" x2="170" y2="200" class="l"/>
+  <line x1="170" y1="200" x2="170" y2="300" class="l"/>
+  <!-- Alívio X1 -->
+  <rect x="200" y="150" width="40" height="40" class="b"/>
+  <line x1="205" y1="185" x2="235" y2="155" class="l"/>
+  <line x1="170" y1="170" x2="200" y2="170" class="l"/>
+  <line x1="240" y1="170" x2="300" y2="170" class="l"/>
+  <line x1="300" y1="170" x2="300" y2="520" class="l"/>
+  <text x="180" y="140" class="h">Alívio X1 — 210 bar (ajuste IECU)</text>
+
+  <!-- Retorno + filtro -->
+  <line x1="270" y1="360" x2="270" y2="520" class="l"/>
+  <rect x="255" y="440" width="30" height="40" class="b"/>
+  <line x1="258" y1="476" x2="282" y2="444" class="l"/>
+  <text x="200" y="465" class="h">Filtro retorno</text>
+  <path d="M250 520 h100 M260 528 h80 M270 536 h60" class="l"/>
+
+  <!-- Linhas até o implemento -->
+  <line x1="190" y1="360" x2="190" y2="380" class="l"/>
+  <line x1="190" y1="380" x2="420" y2="380" class="l"/>
+  <text x="300" y="372" class="h">A — pressão 1" R13</text>
+  <line x1="270" y1="400" x2="420" y2="400" class="l"/>
+  <text x="340" y="415" class="h">B — retorno 1" R12</text>
+  <line x1="300" y1="440" x2="420" y2="440" class="d"/>
+  <text x="340" y="455" class="h">T — dreno 1/2" (≤ 2 bar)</text>
+  <!-- Engates rápidos -->
+  <g class="l"><circle cx="420" cy="380" r="6"/><circle cx="420" cy="400" r="6"/><circle cx="420" cy="440" r="6"/></g>
+  <text x="395" y="340" class="h">Engates rápidos</text>
+
+  <!-- Implemento (limite) -->
+  <rect x="450" y="80" width="520" height="520" class="d"/>
+  <text x="460" y="100" font-weight="bold" class="t">IMPLEMENTO (sobre o deck da roçadeira)</text>
+
+  <!-- Bloco de freio -->
+  <rect x="470" y="200" width="300" height="260" class="b" stroke-dasharray="4 3"/>
+  <text x="480" y="220" font-weight="bold" class="t">Bloco motor-control (freio / anticavitação)</text>
+  <!-- linhas A e B dentro do bloco -->
+  <line x1="426" y1="380" x2="500" y2="380" class="l"/>
+  <line x1="500" y1="380" x2="500" y2="250" class="l"/>
+  <line x1="500" y1="250" x2="820" y2="250" class="l"/>
+  <line x1="426" y1="400" x2="740" y2="400" class="l"/>
+  <line x1="740" y1="400" x2="740" y2="300" class="l"/>
+  <line x1="740" y1="300" x2="880" y2="300" class="l"/>
+  <!-- Alívio cruzado A->B -->
+  <rect x="580" y="285" width="40" height="40" class="b"/>
+  <line x1="585" y1="320" x2="615" y2="290" class="l"/>
+  <line x1="600" y1="250" x2="600" y2="285" class="l"/>
+  <line x1="600" y1="325" x2="600" y2="400" class="l"/>
+  <text x="628" y="310" class="h">Alívio cruzado 230 bar</text>
+  <!-- Alívio frenagem B->A -->
+  <rect x="520" y="285" width="40" height="40" class="b"/>
+  <line x1="525" y1="290" x2="555" y2="320" class="l"/>
+  <line x1="540" y1="250" x2="540" y2="285" class="l"/>
+  <line x1="540" y1="325" x2="540" y2="400" class="l"/>
+  <text x="482" y="345" class="h">Freio 150 bar</text>
+  <!-- Anticavitação check B->A -->
+  <circle cx="680" cy="330" r="9" class="b"/>
+  <polygon points="680,345 672,357 688,357" fill="#111"/>
+  <line x1="680" y1="250" x2="680" y2="321" class="l"/>
+  <line x1="680" y1="357" x2="680" y2="400" class="l"/>
+  <text x="693" y="345" class="h">Anticavitação</text>
+  <text x="693" y="358" class="h">(retorno → entrada)</text>
+
+  <!-- Motor -->
+  <circle cx="850" cy="300" r="34" class="b"/>
+  <polygon points="850,266 842,284 858,284" fill="#111"/>
+  <line x1="820" y1="250" x2="850" y2="250" class="l"/>
+  <line x1="850" y1="250" x2="850" y2="266" class="l"/>
+  <line x1="850" y1="334" x2="850" y2="440" class="l"/>
+  <circle cx="850" cy="440" r="18" class="b"/>
+  <text x="836" y="444" class="h">rotor</text>
+  <text x="700" y="480" class="t">Motor de pistões eixo inclinado</text>
+  <text x="700" y="496" class="t">Rexroth A2FM 125 (ou Parker F12-110)</text>
+  <text x="700" y="512" class="t">~890 rpm · 117 L/min · 300 N·m</text>
+  <!-- dreno -->
+  <line x1="884" y1="300" x2="920" y2="300" class="d"/>
+  <line x1="920" y1="300" x2="920" y2="560" class="d"/>
+  <line x1="920" y1="560" x2="426" y2="560" class="d"/>
+  <line x1="426" y1="560" x2="426" y2="440" class="d"/>
+  <text x="600" y="552" class="h">Dreno de carcaça T (independente, sem válvula, para o tanque)</text>
+
+  <!-- Manômetro -->
+  <circle cx="560" cy="250" r="10" class="b"/>
+  <text x="572" y="243" class="h">Tomada de teste / manômetro</text>
+
+  <!-- Legenda -->
+  <text x="20" y="625" class="h">Legenda: linha contínua = pressão/retorno · tracejado = dreno/limite de conjunto · valores de ajuste são iniciais, confirmar em comissionamento.</text>
+</svg>
