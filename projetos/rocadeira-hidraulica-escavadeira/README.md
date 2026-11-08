@@ -11,6 +11,7 @@ circuito auxiliar X1 (linha de martelo) da escavadeira.**
 | Esquema hidráulico | [`esquema-hidraulico.svg`](esquema-hidraulico.svg) |
 | Layout mecânico (vistas superior e lateral) | [`layout-mecanico.svg`](layout-mecanico.svg) |
 | Foto do implemento original | [`imagens/rocadeira-original.jpg`](imagens/rocadeira-original.jpg) |
+| Benchmark de produtos e conversões semelhantes | [`benchmark.md`](benchmark.md) |
 
 Revisão 0 — 08/11/2026 — projeto conceitual/básico. Antes da fabricação:
 medir o implemento real, confirmar modelo da escavadeira e os dados do circuito X1
