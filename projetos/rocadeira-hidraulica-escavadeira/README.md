@@ -10,10 +10,11 @@ circuito auxiliar X1 (linha de martelo) da escavadeira.**
 | Cálculos reproduzíveis | [`calculos.py`](calculos.py) (`python3 calculos.py`) |
 | Esquema hidráulico | [`esquema-hidraulico.svg`](esquema-hidraulico.svg) |
 | Layout mecânico (vistas superior e lateral) | [`layout-mecanico.svg`](layout-mecanico.svg) |
+| Detalhe 01 — eixo porta-facas e mancal, com cotas | [`detalhe-mancal.svg`](detalhe-mancal.svg) |
 | Foto do implemento original | [`imagens/rocadeira-original.jpg`](imagens/rocadeira-original.jpg) |
 | Benchmark de produtos e conversões semelhantes | [`benchmark.md`](benchmark.md) |
 
-Revisão 0 — 08/11/2026 — projeto conceitual/básico. Antes da fabricação:
+Revisão 1 — 09/11/2026 — projeto básico com detalhe do mancal e benchmark (rev. 0 em 08/11/2026). Antes da fabricação:
 medir o implemento real, confirmar modelo da escavadeira e os dados do circuito X1
 no manual Volvo, e submeter a revisão por engenheiro mecânico habilitado com emissão
 de ART (o projeto envolve segurança de operador e terceiros).
@@ -96,7 +97,7 @@ como protótipo rápido e os cálculos para ela constam no `calculos.py` (seçã
 2. **Reforço do deck**: chapa de 9,5 mm (3/8") soldada sobre o topo, 1 000 × 900 mm,
    centrada no eixo do rotor, com furação para o mancal e para o cabeçote. Reforçar
    as faces laterais internamente com cantoneira 3" × 3/8" na região dos patins.
-3. **Mancal do rotor**: tubo mecânico Ø130 × 15 mm, comprimento 260 mm, com dois
+3. **Mancal do rotor**: tubo mecânico Ø150 × 20 mm, comprimento 260 mm, usinado internamente a Ø110 H7 para os rolamentos, com dois
    rolamentos de rolos cônicos 32212 montados em "O", retentores em ambas as
    extremidades, graxeira e furo de alívio. Flange inferior soldado ao tubo e
    parafusado à chapa de reforço (8 × M16 cl. 10.9). Eixo Ø60 em SAE 1045
@@ -180,6 +181,18 @@ As facas articuladas (pinos de faca originais) limitam o pico de carga transmiti
 ao eixo em choque com pedra ou toco. Manter os pinos de faca e substituí-los a cada
 troca de facas.
 
+**Variante reforçada** (escolher se o uso incluir troncos acima de 50 mm, como fazem as
+roçadeiras de fábrica do benchmark, que usam eixos de 82 a 95 mm):
+
+| Verificação | Resultado |
+|---|---|
+| Eixo Ø80 mm em SAE 4140 beneficiado, impacto radial de 40 kN, balanço 150 mm | σ_eq = 119 MPa → **FS = 3,8** |
+| Rolamentos 32216 (C = 190 kN), carga equivalente 10 kN a 891 rpm | L10h > 300 000 h |
+| Carcaça | tubo Ø180 × 20 usinado a Ø140 H7 |
+
+O desenho [`detalhe-mancal.svg`](detalhe-mancal.svg) traz a versão padrão Ø60 cotada e,
+em nota, as dimensões da versão reforçada.
+
 ### 3.5 Mangueiras (a 117 L/min)
 
 | Linha | Diâmetro | Velocidade | Limite | Situação |
@@ -247,7 +260,7 @@ retentor do motor.
 | 2 | Bloco de controle do motor (alívio cruzado 2×, anticavitação, minimess) | 1 | ex.: Sun Hydraulics / Hydac / Bucher, 150 L/min |
 | 3 | Rolamento de rolos cônicos 32212 | 2 | SKF / FAG / Timken |
 | 4 | Retentor 60 × 85 × 10 (sup.) e 70 × 100 × 10 (inf.) | 1 + 1 | lábio duplo, NBR |
-| 5 | Tubo mecânico Ø130 × 15 mm, L = 260 mm | 1 | SAE 1020/1045 |
+| 5 | Tubo mecânico Ø150 × 20 mm, L = 260 mm, furo usinado Ø110 H7 | 1 | SAE 1020/1045 |
 | 6 | Eixo Ø65 × 450 mm em SAE 1045 beneficiado (bruto p/ usinar Ø60) | 1 | estria DIN 5480 ou SAE conforme motor |
 | 7 | Luva estriada bipartida (motor ↔ eixo) | 1 | ou acoplamento de garras tipo Rotex 48 |
 | 8 | Chapa 9,5 mm ASTM A36 1 000 × 900 mm (reforço do deck) | 1 | |

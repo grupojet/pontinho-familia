@@ -146,6 +146,21 @@ print(f"Tensão equivalente (von Mises)      : {sigma_eq:.0f} MPa  -> FS = {FS:.
 print(f"Vida L10h rolamentos 32212 (par)    : {L10h:,.0f} h")
 
 # ----------------------------------------------------------------------------
+# 6b. Variante reforçada (troncos > 50 mm) - eixo Ø80, rolamentos 32216
+# ----------------------------------------------------------------------------
+titulo("6b. Variante reforçada - eixo Ø80 mm, rolamentos 32216 (troncos até 150 mm)")
+d_hd = 0.080; F_hd = 40.0; C_hd = 190.0; P_hd = 10.0
+tau_hd = 16 * T_rotor / (pi * d_hd**3) / 1e6
+M_hd = F_hd * 1000 * L_balanco_mm / 1000
+sig_hd = 32 * M_hd / (pi * d_hd**3) / 1e6
+seq_hd = sqrt(sig_hd**2 + 3 * tau_hd**2)
+L10_hd = (C_hd / P_hd)**(10/3) * 1e6 / (60 * n_rotor)
+print(f"Impacto radial admitido {F_hd:.0f} kN, balanço {L_balanco_mm:.0f} mm -> M = {M_hd:.0f} N.m")
+print(f"Tensão equivalente                  : {seq_hd:.0f} MPa  -> FS = {Sy_eixo/seq_hd:.1f}")
+print(f"Vida L10h rolamentos 32216 (C={C_hd:.0f} kN, P={P_hd:.0f} kN): {L10_hd:,.0f} h")
+print("Tubo do mancal: Ø180 x 20 usinado a Ø140 H7; eixo SAE 4140 beneficiado.")
+
+# ----------------------------------------------------------------------------
 # 7. Mangueiras - velocidade do fluido
 # ----------------------------------------------------------------------------
 titulo("7. Mangueiras - velocidade de escoamento")
